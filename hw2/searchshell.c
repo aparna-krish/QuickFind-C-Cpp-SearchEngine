@@ -28,7 +28,8 @@
 // Helper function declarations, constants, etc
 static void Usage(void);
 // Prints search result with correct ranking and format
-static void ProcessQueries(FILE *f, DocTable *dt, MemIndex *mi, char **query, int q_size);
+static void ProcessQueries(FILE *f, DocTable *dt,
+                            MemIndex *mi, char **query, int q_size);
 // Reads next line of user input input into return parameter
 static int GetNextLine(FILE *f, char **ret_str);
 
@@ -165,7 +166,8 @@ static void Usage(void) {
   exit(EXIT_FAILURE);
 }
 
-static void ProcessQueries(FILE *f, DocTable *dt, MemIndex *mi, char **query, int q_size) {
+static void ProcessQueries(FILE *f, DocTable *dt,
+                           MemIndex *mi, char **query, int q_size) {
   LinkedList *ret = MemIndex_Search(mi, query, q_size);
 
   if (ret != NULL) {
